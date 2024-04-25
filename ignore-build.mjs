@@ -19,6 +19,7 @@ if (process.env.VERCEL_ENV === "preview") {
     headers: { Authorization: `Bearer ${process.env.VERCEL_ACCESS_TOKEN}` }
   }).then(res => res.json());
   const isSnapletDeployment = deployment.name.startsWith('snaplet-action-');
+    console.log(deployment.data);
   const isStaging = deployment.data?.gitSource?.ref === 'staging'
   
   if (isStaging) {
